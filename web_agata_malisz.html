@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ROŚLINY DOMOWE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="layout3.css" >
+
+</head>
+<style>
+    #container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background: yellow;
+    }
+    #animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: red;
+    }
+</style>
+<body background="images/background.png">
+
+<header id='title'>
+<h2> ROŚLINY DOMOWE </h2>
+</header>
+
+<section>
+<nav>
+<ul>
+<li onclick="loadRoslinyZielone()"><a>Rośliny zielone</a></li>
+<li onclick="loadRoslinyKwitnace()"><a>Rośliny kwitnące</a></li>
+<li onclick="loadPielegnacja()"><a>Pielęgnacja roślin domowych</a></li>
+</nav>
+</section>
+
+<section class="article">
+    <article>
+        <h2 id="title"></h2>
+            <p id="text"></p>
+    </article>
+</section>
+
+<section class="article-img" id="images">
+</section>
+
+
+<script>
+
+	let articleTitle = document.getElementById('title');
+	let articleText = document.getElementById('text');
+	var image = document.getElementById("images");
+
+    function loadRoslinyZielone() {
+		articleTitle.innerHTML = roslinyZielone.title;
+		articleText.innerHTML = roslinyZielone.content;
+		
+		image.style.height = '300px';
+		image.style.width = '280px';
+		image.style.padding = '10px';
+		image.innerHTML = roslinyZielone.images;
+    }
+	
+    function loadRoslinyKwitnace() {
+		articleTitle.innerHTML = roslinyKwitnace.title;
+		articleText.innerHTML = roslinyKwitnace.content;
+		
+		image.style.height = '300px';
+		image.style.width = '280px';
+		image.style.padding = '10px';
+		image.innerHTML = roslinyKwitnace.images;
+    }
+
+    function loadPielegnacja() {
+		articleTitle.innerHTML = pielegnacja.title;
+		articleText.innerHTML = pielegnacja.content;
+		
+		image.style.height = '300px';
+		image.style.width = '280px';
+		image.style.padding = '10px';
+		image.innerHTML = pielegnacja.images;
+    }
+
+</script>
+
+<script src="content.js" type="text/javascript"></script>
+
+</body>
+</html>
